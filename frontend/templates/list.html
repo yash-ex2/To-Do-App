@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Assets/CSS/index.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Todo Application</h1>
+    <form method="POST" action="./src/templates/list.html" id="form">
+        <input type="text" name="taskName" placeholder="Task Name">
+        <input type="text" name="taskDesc" placeholder="Task Description">
+        <input type="date" name="dueDate" placeholder="Date Due">
+        <input type="text" name="status" placeholder="Status">
+       <input type="submit" class="submit" value="Add Task">
+   </form>
+   <div class="form-popup" id="form-container" >
+    <form id="updateForm">
+      <h2>Update Task</h2>
+      <button type="button" class="btn cancel" onclick="closeForm()">&#9747;</button>
+      <input type="text" name="taskName" placeholder="Task Name" >
+      <input type="text" name="taskDesc" placeholder="Task Description">
+      <input type="date" name="dueDate" placeholder="Date Due">
+      <input type="text" name="status" placeholder="Status">
+      <input type="text" name="id" id="taskid" style="display: none;">
+     <input type="submit" class="submit" value="Add Task" id="submitUpdateForm">
+      
+    </form>
+  </div> 
+   
+   <div id="list">
+
+    </div>
+
+
+    <script src="../Assets/js/index.js"></script>
+</body>
+</html>

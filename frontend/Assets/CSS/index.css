@@ -1,0 +1,229 @@
+*,body{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    align-items: center;
+    text-decoration: none;
+    color:white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: all .3s ease-in;
+}
+body{
+    background: black;
+    padding: 10px 40px;
+    align-items: center;
+    width: 100%;
+}
+h1{
+    margin: 20px;
+}
+
+form {
+    background-color: #15172b;
+    border-radius: 20px;
+    box-sizing: border-box;
+    height: 10vh;
+    padding: 20px;
+    width: 90%;
+    display: flex;
+    gap: 10px;
+    margin: 0 auto;
+}
+form:hover {
+    transform: scale(1.1);
+    box-shadow: 8px 8px 5px 0px rgba(119, 118, 118, 0.25);
+}
+
+.submit,button,#btn1 {
+    background-color: #08d;
+    border-radius: 8px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 5px;
+    outline: 0;
+    text-align: center;
+    display: block;
+    width: 100%;
+}
+
+input[type="text"],
+input[type="date"]
+ {
+    background-color: #303245;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    font-size: 18px;
+    height: 100%;
+    outline: 0;
+    padding: 4px 15px 0;
+    width: 100%;
+}
+#list div{
+    margin: 20px auto;
+    padding: 10px;
+    transition: all 0.2s;
+    background:#33354f53;
+    justify-content: space-evenly;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 45% 45% 5%;
+    grid-template-rows: 30px 30px;
+    position: relative;
+    width: 90%;
+    align-items: center;
+    transition: 0.5s;
+}
+
+
+#list div::before
+{
+  content:' ';
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  left: -100%;
+  width: 100%;
+  justify-content: center;
+  height: 100%;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: 0.5s;
+  background: linear-gradient(315deg, #ffbc00, #ff0058)
+}
+
+
+#list div:hover:before{
+    left: 0%;
+    opacity: 1;
+    box-shadow: 8px 8px 5px 0px rgba(119, 118, 118, 0.25);
+}
+
+
+
+#list div span{
+    /* background-color: #b0e00253; */
+    padding: 5px 10px;
+    border-radius: 4px;
+    /* box-shadow: 5px 5px 5px #95bc081e; */
+    text-align: right;
+    padding: 5px 10px;
+}
+#list div h5{
+    text-align: right;
+    padding: 5px 10px;
+}
+div button{
+    padding: 2px 5px;
+    font-size: 14px;
+}
+#form-container {
+    margin: auto;
+    width: 60%;
+    height: 50%;
+    z-index: 10;
+}
+
+#form-container #updateForm{
+    display: grid;
+    position: absolute;
+    width: 60%;
+    grid-template-columns: auto auto;
+    background-color: #15172b;
+    box-shadow: 0 10px 10px 0 #303245;
+    height: 40%;
+    padding: 20px;
+    z-index: 10;
+}
+#updateForm .submit{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+#updateForm .cancel{ 
+    width: 30px;
+    justify-self: end;
+}
+
+@media only screen and (max-width:600px) {
+    #list div{
+        margin: 10px auto;
+        padding: 10px;
+        transition: all 0.2s;
+        background:#33354f53;
+        justify-content: space-evenly;
+        border-radius: 10px;
+        display: grid;
+        grid-template-areas:"h h b"
+                            "s d x"
+                            "p p c";
+        position: relative;
+        width: 90%;
+        align-items: center;
+        transition: 0.5s;
+    }
+    #list div h2{
+        grid-area: "h";
+    }
+    #list div h5{
+        grid-area: "s";
+    }
+    #list div span{
+        grid-area: "d";
+    }
+    #list div p{
+        grid-area: "p";
+    }
+    #btn1{
+        grid-area: "b";
+    }
+    #btn2{
+        grid-area: "c";
+    }
+}
+
+@media only screen and (max-width:500px) {
+    body{
+        padding: 5px;
+    }
+    #list div{
+        background-color: #ff0058;
+        display: grid;
+        grid-template-areas:"h h"
+                            "s d "
+                            "p p"
+                            "c e";
+        height: fit-content;
+        width: 100%;
+        margin: 0;
+    }
+    #list div h2{
+        grid-area: "h";
+        font-size: 20px;
+    }
+    #list div h5{
+        grid-area: "s";
+    }
+    #list div span{
+        grid-area: "d";
+    }
+    #list div p{
+        grid-area: "p";
+    }
+    #btn1{
+        grid-area: "e";
+    }
+    #btn2{
+        grid-area: "c";
+    }
+    body form,#updateForm{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 10px 5px;
+        height: fit-content;
+    }
+}
