@@ -138,7 +138,7 @@ submitUpdateForm.addEventListener('click', async(e) => {
         })
     }
     await putReq();
-    window.location.href="/src/templates/list.html"
+    window.location.href="/frontend/templates/list.html"
 })
 
 

@@ -1,10 +1,9 @@
-const {getAllTasks} = require('../repositories/get-all-task.repository');
+const getAllTasksRepo = require('../repositories/get-all-task.repository');
 const {writeAllTasks} = require('../repositories/write-all-task.repository');
 
 const updateTask = async (taskName, taskDesc, dueDate, status, id) => {
-    console.log('sdsd');
-    let json = await getAllTasks();
-    console.log(json);
+    let json = await getAllTasksRepo.getAllTasks();
+
     json.forEach((task) => {
         if (task.id == id) {
             task.taskName = taskName;
@@ -13,7 +12,7 @@ const updateTask = async (taskName, taskDesc, dueDate, status, id) => {
             task.status = status;
         }
     })
-    await writeAllTasks(json);
+    writeAllTasks(json);
 }
 module.exports = {
     updateTask,

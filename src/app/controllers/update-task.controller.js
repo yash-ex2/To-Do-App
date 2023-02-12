@@ -10,7 +10,7 @@ const updateTask = async (req, res) => {
         status
     } = req.body;
     updateTaskService.updateTask(taskName, taskDesc, dueDate, status, req.params.id);
-    res.send('task updated');
+    res.send();
 }
 module.exports = {
     updateTask
